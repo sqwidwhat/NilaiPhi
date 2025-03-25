@@ -7,7 +7,7 @@ public class Main {
         int iterasi = 0;
         boolean isMinus = true;    // Tanda operasi (- untuk suku kedua)
         double targetPi = 3.14159; // Nilai π yang ingin dicapai (5 desimal)
-        double toleransi = 0.00001; // Batas kedekatan dengan π
+        double toleransi = 0.000001; // Batas kedekatan dengan π
 
         while (iterasi < 1000000) { // Batas maksimum iterasi
             // Tambah/kurangi nilai phi sesuai tanda

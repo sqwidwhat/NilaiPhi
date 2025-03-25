@@ -1,27 +1,25 @@
 import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
-        double phi = 4.0;          // Suku pertama: 4
+        double phi = 4.0;
         double pembilang = 4.0;
-        double penyebut = 3.0;     // Dimulai dari penyebut = 3 (suku kedua: 4/3)
+        double penyebut = 3.0;
         int iterasi = 0;
-        boolean isMinus = true;    // Tanda operasi (- untuk suku kedua)
-        double targetPi = 3.14159; // Nilai π yang ingin dicapai (5 desimal)
-        double toleransi = 0.000001; // Batas kedekatan dengan π
+        boolean kurang = true;
+        double targetPi = 3.14159;
+        double toleransi = 0.000001;
 
-        while (iterasi < 1000000) { // Batas maksimum iterasi
-            // Tambah/kurangi nilai phi sesuai tanda
-            if (isMinus) {
+        while (iterasi < 1000000) {
+            if (kurang) {
                 phi -= pembilang / penyebut;
             } else {
                 phi += pembilang / penyebut;
             }
 
-            penyebut += 2;       // Penyebut bertambah 2 (3, 5, 7, ...)
-            isMinus = !isMinus;  // Tanda bergantian (+/-)
+            penyebut += 2;
+            kurang = !kurang;
             iterasi++;
 
-            // Berhenti jika sudah cukup dekat dengan π
             if (Math.abs(phi - targetPi) < toleransi) {
                 break;
             }
